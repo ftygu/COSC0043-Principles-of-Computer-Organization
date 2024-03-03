@@ -13,6 +13,7 @@ class GPU:
         return daily_amortized_cost
 
     def calculate_daily_power_cost(self, electricity_cost_per_kWh=0.10, hours_per_day=24):
+        power_cost_per_hour = (self.power / 1000) * electricity_cost_per_kWh
         daily_power_cost = power_cost_per_hour * hours_per_day
         return daily_power_cost
 
