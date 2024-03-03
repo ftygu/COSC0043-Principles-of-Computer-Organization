@@ -1,5 +1,3 @@
-# 由于代码执行状态重置，需要重新定义GPU类和实例化显卡列表
-
 class GPU:
     def __init__(self, name, price, power, performance):
         self.name = name
@@ -24,7 +22,6 @@ class GPU:
         cost_per_image = (daily_amortized_cost + daily_power_cost) / images_per_day
         return cost_per_image
 
-# 示例显卡列表
 gpu_list = [
     GPU('RTX 4090', 1599, 450, 75.13),
     GPU('RTX 4080', 1199, 320, 51.55),
@@ -42,7 +39,6 @@ gpu_list = [
     GPU('RTX 3070', 499, 220, 26.04)
 ]
 
-# 计算并输出所有显卡的名字以及其对应的成本
 for gpu in gpu_list:
     cost_per_image = gpu.calculate_cost_per_image()
     print(f"显卡: {gpu.name}, 每张图片的成本: {cost_per_image:.10f} USD")
