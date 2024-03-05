@@ -1,0 +1,9 @@
+\contentsline {section}{\numberline {1}企业雇佣画师创作图片}{1}{}%
+\contentsline {subsection}{\numberline {1.1}请估算某企业雇佣一名画师进行一张图片创作成本}{1}{}%
+\contentsline {section}{\numberline {2}人工智能创作图片}{2}{}%
+\contentsline {subsection}{\numberline {2.1}请估算使用人工智能算法生成一张图片的成本}{2}{}%
+\contentsline {section}{\numberline {3}结论与预测}{4}{}%
+\contentsline {subsection}{\numberline {3.1}从时间成本角度}{4}{}%
+\contentsline {subsection}{\numberline {3.2}从金钱成本角度}{4}{}%
+\contentsline {subsection}{\numberline {3.3}AI亦有局限}{5}{}%
+\contentsline {subsection}{\numberline {3.4}AI绘画是未来趋势}{5}{}%
