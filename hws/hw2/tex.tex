@@ -69,17 +69,18 @@
 对于矩阵C中的每个元素C[i][j]，其值计算为矩阵A的第i行与矩阵B的第j列对应元素的乘积之和。
 这个过程包含大量的乘法和加法操作，可以测试CPU处理复杂数学运算的能力。
 \begin{lstlisting}[language=C++]
-    vector<vector<int>> matrixMultiply(const vector<vector<int>>& a, const vector<vector<int>>& b) {
-        size_t n = a.size();
-        vector<vector<int>> result(n, vector<int>(n, 0));
-        for (size_t i = 0; i < n; i++) {
-            for (size_t j = 0; j < n; j++) {
-                for (size_t k = 0; k < n; k++) {
-                    result[i][j] += a[i][k] * b[k][j];
-                }
+vector<vector<int>> matrixMultiply(const vector<vector<int>>& a,
+                                   const vector<vector<int>>& b) {
+    size_t n = a.size();
+    vector<vector<int>> result(n, vector<int>(n, 0));
+    for (size_t i = 0; i < n; i++) {
+        for (size_t j = 0; j < n; j++) {
+            for (size_t k = 0; k < n; k++) {
+                result[i][j] += a[i][k] * b[k][j];
             }
         }
-        return result;
+    }
+    return result;
     }
 \end{lstlisting}
 \subsection{计算圆周率}
