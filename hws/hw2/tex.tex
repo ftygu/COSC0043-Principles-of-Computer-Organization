@@ -119,6 +119,16 @@ vector<vector<int>> matrixMultiply(const vector<vector<int>>& a,
     \caption{CPU测试结果}
     \label{fig:image1}
     \end{figure}
+在对我们小组成员PC的测试中，我们得出了以下结论
+AMD Ryzen 7 5800H 的性能表现最好，时间最短，大约为1500毫秒左右。
+接下来是 13th Gen Intel Core i5-13500HX，性能稍差，但仍然接近 AMD Ryzen 7 5800H，时间大约在1000毫秒左右。
+12th Gen Intel Core i7-12700H 的性能处于中等，时间在1700毫秒左右。
+AMD Ryzen 7 5700U 的性能最差，时间超过了2000毫秒。
+此外我们还运行了一些更为完善的cpu测试软件，例如Cinebench R23。
+
+AMD Ryzen 7 5800H 的多核心得分为 13226，而同类的 Intel Core i7-11800H 的多核心得分为 12668。
+单核心得分方面，5800H 为 1494，i7-11800H 则为 1395。
+这与我们的测试集取得的结果相一致，5800H的性能略高于i7-11800H。
 \section{结论}
 本文档提出的CPU性能基准测试设计方案，通过一系列计算任务，能够全面地评估CPU的处理速度。这种测试方法简单有效，易于实施。
 通过这种方法，用户可以获得关于不同CPU性能的直观且实用的信息，为CPU的选择和性能优化提供科学依据。
