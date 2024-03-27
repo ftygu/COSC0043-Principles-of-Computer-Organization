@@ -1,0 +1,10 @@
+0.6
+2018.3
+Dec  7 2018
+00:33:28
+C:/Users/Zhangmingkun/materials/COSC0043 Principles of Computer Organization/labs/lab1/64adder/64adder.sim/sim_1/behav/xsim/glbl.v,1544155481,verilog,,,,glbl,,,,,,,,
+C:/Users/Zhangmingkun/materials/COSC0043 Principles of Computer Organization/labs/lab1/64adder/64adder.srcs/sim_1/new/adder64_test.v,1711531238,verilog,,,,adder64_test,,,,,,,,
+C:/Users/Zhangmingkun/materials/COSC0043 Principles of Computer Organization/labs/lab1/64adder/64adder.srcs/sim_1/new/adder_display_tb.v,1711535342,verilog,,,,adder_display_tb,,,,,,,,
+C:/Users/Zhangmingkun/materials/COSC0043 Principles of Computer Organization/labs/lab1/64adder/64adder.srcs/sources_1/new/adder64.v,1711530621,verilog,,C:/Users/Zhangmingkun/materials/COSC0043 Principles of Computer Organization/labs/lab1/64adder/64adder.srcs/sources_1/new/adder_display.v,,adder64,,,,,,,,
+C:/Users/Zhangmingkun/materials/COSC0043 Principles of Computer Organization/labs/lab1/64adder/64adder.srcs/sources_1/new/adder_display.v,1711535196,verilog,,C:/Users/Zhangmingkun/materials/COSC0043 Principles of Computer Organization/labs/lab1/64adder/64adder.srcs/sources_1/new/lcd_module.v,,adder_display,,,,,,,,
+C:/Users/Zhangmingkun/materials/COSC0043 Principles of Computer Organization/labs/lab1/64adder/64adder.srcs/sources_1/new/lcd_module.v,1711530805,verilog,,C:/Users/Zhangmingkun/materials/COSC0043 Principles of Computer Organization/labs/lab1/64adder/64adder.srcs/sim_1/new/adder_display_tb.v,,lcd_module,,,,,,,,
