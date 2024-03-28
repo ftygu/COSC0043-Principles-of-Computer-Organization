@@ -5,7 +5,7 @@
 \contentsline {section}{\numberline {3}实验原理图}{2}{}%
 \contentsline {section}{\numberline {4}实验步骤}{3}{}%
 \contentsline {subsection}{\numberline {4.1}编写verilog代码}{3}{}%
-\contentsline {subsection}{\numberline {4.2}仿真验证}{5}{}%
-\contentsline {subsection}{\numberline {4.3}上箱验证}{6}{}%
-\contentsline {section}{\numberline {5}实验结果分析}{7}{}%
-\contentsline {section}{\numberline {6}总结感想}{7}{}%
+\contentsline {subsection}{\numberline {4.2}仿真验证}{6}{}%
+\contentsline {subsection}{\numberline {4.3}上箱验证}{8}{}%
+\contentsline {section}{\numberline {5}实验结果分析}{8}{}%
+\contentsline {section}{\numberline {6}总结感想}{8}{}%

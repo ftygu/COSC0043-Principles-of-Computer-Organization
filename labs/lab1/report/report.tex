@@ -72,9 +72,53 @@ adder\_display模块将加法器模块和显示控制模块连接起来，并管
 \end{verbatim}
 为了使得其他模块能够与该加法器协同工作，我们需要对adde\_dispaly进行以下修改，每次输入一个数字的32位，分四次完成输入。
 \begin{verbatim}
-    //此处代码与指导手册相同，故不再列出
-    input [1:0]input_sel1, //0:输入为加数1;1:输入为加数2
-    input [1:0]input_sel2, //0:输入为低32位;1:输入为高32位
+    module adder_display(
+        input clk,
+        input resetn,
+        input input_sel1,
+        input input_sel2,
+        input sw_cin1,
+        input sw_cin2,
+        output led_cout1,
+        output led_cout2,
+        output lcd_rst,
+        output lcd_cs,
+        output lcd_rs,
+        output lcd_wr,
+        output lcd_rd,
+        inout[15:0] lcd_data_io,
+        output lcd_bl_ctr,
+        inout ct_int,
+        inout ct_sda,
+        output ct_scl,
+        output ct_rstn
+        );
+    begin
+        reg  [31:0] adder_operand1;
+        reg  [31:0] adder_operand2;
+        reg  [31:0] adder_operand3;
+        reg  [31:0] adder_operand4;
+        wire        adder_cin1;
+        wire        adder_cin2;
+        wire [31:0] adder_result  ;
+        wire        adder_cout1;
+        wire        adder_cout2;
+        adder32 adder_module(
+            .operand1(adder_operand1),
+            .operand2(adder_operand2),
+            .operand3(adder_operand3),
+            .operand4(adder_operand4),
+            .cin1     (adder_cin1     ),
+            .cin2     (adder_cin2     ),
+            .result  (adder_result  ),
+            .cout1    (adder_cout1    ),
+            .cout2    (adder_cout2    )
+        );
+        assign adder_cin1 = sw_cin1;
+        assign adder_cin2 = sw_cin2;
+        assign led_cout1  = adder_cout1;
+        assign led_cout2  = adder_cout2;
+    end
     //此处代码与指导手册相同，故不再列出
     always @(posedge clk)
     begin
@@ -106,7 +150,6 @@ adder\_display模块将加法器模块和显示控制模块连接起来，并管
             adder_operand2[63:32] <= input_value;
         end
     end
-    //此处代码与指导手册相同，故不再列出
 \end{verbatim}
 \subsection{仿真验证}
 书写仿真文件如下所示。
@@ -155,32 +198,31 @@ endmodule
 
 可以观察到，再不同的operand和cin的取值下，cout和result都是正确的。
 \subsection{上箱验证}
-为了在试验箱上验证我们的代码，我们需要首先修改约束文件。
+为了在试验箱上验证我们的代码，我们需要首先修改约束文件。增加以下内容。
 \begin{verbatim}
-//此处代码与指导手册相同，故不再列出
 set_property PACKAGE_PIN AC21 [get_ports input_sel1]
 set_property PACKAGE_PIN AD24 [get_ports input_sel2]
-//此处代码与指导手册相同，故不再列出
+
 set_property IOSTANDARD LVCMOS33 [get_ports input_sel1]
 set_property IOSTANDARD LVCMOS33 [get_ports input_sel2]
-//此处代码与指导手册相同，故不再列出
 \end{verbatim}
 
 随后打开 FPGA 实验板，上电，并将下载线与电脑相连。进行烧写 bit 文件。
 
 随后运行程序验证是否正确。
 
-从图\ref{box}中可以看到 LCD 触摸屏上分别显示了 2 个加数和加法结果，
+从图\ref{box}中可以看到 LCD 触摸屏上分别显示了 4 个加数和加法结果，
 最右侧的led 灯为向高位的进位，该 led 灯为共阴极的，即输入为 0 是亮，为1 是不亮，
 由于当前进位为 0，故 led 灯为亮。
 拨码开关最右侧的开关用来选择触摸屏输入的数据为加数1 还是加数 2，
-当前该开关置为 1，说明触摸屏输入的 32 位数位加数2。
+输出结果的result1和result2分别代表高32位和低32位。
 \begin{figure}[ht]
     \centering
-    \includegraphics[width=1\textwidth]{./figures/wave.png}
+    \includegraphics[width=1\textwidth]{./figures/box.jpg}
     \caption{实验原理图}
     \label{box}
 \end{figure}
+可以看到，结果是正确的a696696505669a99+8955652006769a65=2febce850bdd34ff。
 \section{实验结果分析}
 经过仿真验证和上箱验证，实验结果均符合我的预期，实现了一个64位的加法器模块。
 \section{总结感想}
